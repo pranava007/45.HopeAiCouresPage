@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Flowbite CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+  <!-- Optional Tailwind Config -->
+</head>
+
+<body>
+  <!-- 🔷 Top Contact Bar - Horizontal Layout -->
+  <div class="bg-purple-700 text-white py-1 px-1 md:pr-20 ">
+    <div class="max-w-7xl mx-auto flex justify-end">
+      <div class="flex items-center space-x-6 text-sm">
+
+        <!-- 📞 Admin Contact -->
+        <div class="flex items-center space-x-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-300" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 5a2 2 0 012-2h2l2 5-2 2a16 16 0 006 6l2-2 5 2v2a2 2 0 01-2 2h-1C9.4 21 3 14.6 3 7V5z" />
+          </svg>
+          <span class="font-semibold">+91 63832 18808</span>
+        </div>
+
+        <!-- 📧 Support Email -->
+        <div class="flex items-center space-x-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-300" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" />
+          </svg>
+          <span class="font-semibold">support@example.com</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Nva bar start -->
+
+  <nav class="bg-white border-b border-purple-700 shadow-md shadow-purple-500">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-4">
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="./LogoNew.webp" class="h-11" alt="Flowbite Logo" />
+      </a>
+
+      <button data-collapse-toggle="navbar-multi-level" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="navbar-multi-level" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+
+      <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+        <ul
+          class="flex flex-col text-black font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+          <li>
+            <a href="#" class="relative inline-block px-6 py-2 text-sm font-semibold text-purple-700 
+                     bg-white border border-purple-700 rounded-full shadow-md 
+                     transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] 
+                     hover:bg-purple-700 hover:text-white 
+                     hover:border-transparent 
+                     hover:shadow-lg hover:ring hover:ring-purple-700 hover:ring-offset-1 
+                     focus:outline-none focus:ring-2 focus:ring-fuchsia-700 
+                     active:scale-95 active:shadow-inner">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="relative inline-block px-6 py-2 text-sm font-semibold text-purple-700 
+              bg-white border border-purple-700 rounded-full shadow-md 
+              transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] 
+              hover:bg-purple-700 hover:text-white 
+              hover:border-transparent 
+              hover:shadow-lg hover:ring hover:ring-purple-700 hover:ring-offset-1 
+              focus:outline-none focus:ring-2 focus:ring-fuchsia-700 
+              active:scale-95 active:shadow-inner">
+              Courses
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="relative inline-block px-6 py-2 text-sm font-semibold text-purple-700 
+              bg-white border border-purple-700 rounded-full shadow-md 
+              transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] 
+              hover:bg-purple-700 hover:text-white 
+              hover:border-transparent 
+              hover:shadow-lg hover:ring hover:ring-purple-700 hover:ring-offset-1 
+              focus:outline-none focus:ring-2 focus:ring-fuchsia-700 
+              active:scale-95 active:shadow-inner">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="relative inline-block px-6 py-2 text-sm font-semibold text-purple-700 
+              bg-white border border-purple-700 rounded-full shadow-md 
+              transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] 
+              hover:bg-purple-700 hover:text-white 
+              hover:border-transparent 
+              hover:shadow-lg hover:ring hover:ring-purple-700 hover:ring-offset-1 
+              focus:outline-none focus:ring-2 focus:ring-fuchsia-700 
+              active:scale-95 active:shadow-inner">
+              Contact
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#" class="relative inline-block px-6 py-2 text-sm font-semibold text-purple-700 
+              bg-white border border-purple-700 rounded-full shadow-md 
+              transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] 
+              hover:bg-purple-700 hover:text-white 
+              hover:border-transparent 
+              hover:shadow-lg hover:ring hover:ring-purple-700 hover:ring-offset-1 
+              focus:outline-none focus:ring-2 focus:ring-fuchsia-700 
+              active:scale-95 active:shadow-inner">
+              Career
+            </a>
+          </li>
+
+
+
+
+
+
+
+
+
+
+          <!-- Search Button -->
+          <div class="relative w-full flex justify-end items-center">
+            <button type="button" id="toggleSearch" aria-label="Search" class="p-2 text-purple-700 hover:text-white bg-white border border-purple-700
+                       rounded-full shadow-md transition-all duration-300 ease-in-out 
+                       hover:bg-purple-700 hover:shadow-lg focus:outline-none 
+                       focus-visible:ring-2 focus-visible:ring-fuchsia-500 active:scale-95 active:shadow-inner">
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+              </svg>
+            </button>
+          </div>
+
+
+          <!-- Fullscreen Search Modal -->
+          <div id="searchOverlay"
+            class="hidden fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50">
+            <form id="searchForm" class="w-11/12 max-w-lg bg-white px-6 py-5 rounded-2xl shadow-2xl">
+              <div class="relative">
+                <input type="text" placeholder="Search ..."
+                  class="w-full pl-12 pr-4 py-3 text-base text-black bg-gray-100 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
+                  autofocus />
+                <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+              </div>
+            </form>
+          </div>
+      </div>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <!-- Nva bar end -->
+
+
+  <!-- secession 1 -->
+
+ <!-- TailwindCSS Accordion with Left Content (Syllabus) and Right CTA Section -->
+<section class="bg-purple-100 shadow-inner w-full mt-2">
+    <div class="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Left: Accordion Content -->
+      <div class="lg:col-span-2 space-y-6 text-left">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-700 leading-tight">
+          Full Stack Artificial Intelligence & Data Science Course - Syllabus
+        </h1>
+  
+        <!-- Accordion Example (Add More Modules Dynamically) -->
+      <div class="space-y-4">
+          <!-- Week 0 -->
+          <details class="bg-white shadow rounded-md p-4">
+            <summary class="cursor-pointer font-semibold text-purple-700 text-lg">Week 0 - Ground Work</summary>
+            <ul class="space-y-3">
+
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">🧘</span>
+                  <span class="text-gray-800 font-medium">Mind Preparation</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">📣</span>
+                  <span class="text-gray-800 font-medium">Important Update</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">📱</span>
+                  <span class="text-gray-800 font-medium">Professional Social Media Growth</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">💼</span>
+                  <span class="text-gray-800 font-medium">LinkedIn 1-3</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">📝</span>
+                  <span class="text-gray-800 font-medium">Quiz and Baby Steps</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">💻</span>
+                  <span class="text-gray-800 font-medium">GitHub</span>
+                  <span class="ml-auto text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-full">YOUTUBE</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">📚</span>
+                  <span class="text-gray-800 font-medium">Extra Assignments</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">✍️</span>
+                  <span class="text-gray-800 font-medium">How to Take Notes</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">🤖</span>
+                  <span class="text-gray-800 font-medium">Let's Start with AI</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">🔒</span>
+                  <span class="text-gray-800 font-medium">LinkedIn Private Group</span>
+                  <span class="ml-auto text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">ACCESS</span>
+                </li>
+              
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">📦</span>
+                  <span class="text-gray-800 font-medium">Download Resources</span>
+                  <span class="ml-auto flex items-center gap-1">
+                    <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">PDF</span>
+                  </span>
+                </li>
+              
+              </ul>
+              
+          </details>
+  
+          <!-- Week 1 -->
+          <details class="bg-white shadow rounded-md p-4">
+            <summary class="cursor-pointer font-semibold text-purple-700 text-lg">Week 1 - Travel Path</summary>
+            <ul class="list-disc list-inside mt-2 space-y-1 text-sm text-gray-800">
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🎥</span>
+                      <span class="text-gray-800 font-medium">What is Artificial Intelligence?</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🧠</span>
+                      <span class="text-gray-800 font-medium">How Artificial Brain Created?</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🎯</span>
+                      <span class="text-gray-800 font-medium">End Goal of AI</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">💡</span>
+                      <span class="text-gray-800 font-medium">Application of AI</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">⚖️</span>
+                      <span class="text-gray-800 font-medium">AI vs HI Comparison</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📊</span>
+                      <span class="text-gray-800 font-medium">AI Domains</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">❓</span>
+                      <span class="text-gray-800 font-medium">Why Data Science?</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🔗</span>
+                      <span class="text-gray-800 font-medium">Relation between AI and Python</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🔄</span>
+                      <span class="text-gray-800 font-medium">Traditional vs AI</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">💰</span>
+                      <span class="text-gray-800 font-medium">How to Make Money Using AI</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">❤️</span>
+                      <span class="text-gray-800 font-medium">Heart of AI</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-green-50 rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-green-700 text-lg">📝</span>
+                      <span class="text-gray-800 font-medium">Test 1 - Online Exercise</span>
+                    </li>
+                  </ul>
+                  
+            </ul>
+          </details>
+  
+          <!-- Week 2 -->
+          <details class="bg-white shadow rounded-md p-4">
+            <summary class="cursor-pointer font-semibold text-purple-700 text-lg">Week 2 - Python</summary>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">🛠️</span>
+                  <span class="text-gray-800 font-medium">Python Tools, Installations</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">🖨️</span>
+                  <span class="text-gray-800 font-medium">Print Statements, Variables</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">🔁</span>
+                  <span class="text-gray-800 font-medium">Control Structures (If, Else, Loops)</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">📄</span>
+                  <span class="text-gray-800 font-medium">Assignments</span>
+                  <span class="ml-auto text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">PDFs</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">🧠</span>
+                  <span class="text-gray-800 font-medium">Functions & Classes</span>
+                  <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">📁</span>
+                  <span class="text-gray-800 font-medium">Function/Class Assignments</span>
+                  <span class="ml-auto text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">PDF</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">🧪</span>
+                  <span class="text-gray-800 font-medium">Test 2 & 3</span>
+                  <span class="ml-auto text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Online Exercises</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">💼</span>
+                  <span class="text-gray-800 font-medium">Python Interview Questions</span>
+                  <span class="ml-auto text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">External Link</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                  <span class="text-purple-700 text-lg">❓</span>
+                  <span class="text-gray-800 font-medium">MCQs</span>
+                  <span class="ml-auto text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Online Exercise</span>
+                </li>
+              </ul>
+              
+          </details>
+
+            <!-- Week 2 -->
+            <details class="bg-white shadow rounded-md p-4">
+                <summary class="cursor-pointer font-semibold text-purple-700 text-lg">Week 3 - Machine-Learning-Regression</summary>
+
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🧠</span>
+                      <span class="text-gray-800 font-medium">Problem Identification in AI</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🔍</span>
+                      <span class="text-gray-800 font-medium">How to identify Supervised Learning</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🔍</span>
+                      <span class="text-gray-800 font-medium">How to identify Unsupervised Learning</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">⚖️</span>
+                      <span class="text-gray-800 font-medium">Difference Btw Super and Unsuper - Scenario Based</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🎓</span>
+                      <span class="text-gray-800 font-medium">How to identify Semi Supervised</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📊</span>
+                      <span class="text-gray-800 font-medium">How to identify Supervised - Classification and Regression</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🌐</span>
+                      <span class="text-gray-800 font-medium">Mapping Domains with Learning</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🔄</span>
+                      <span class="text-gray-800 font-medium">Scenario based Example to identify problem-1</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📂</span>
+                      <span class="text-gray-800 font-medium">Scenario based Example to identify problem-1-Dataset</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🔄</span>
+                      <span class="text-gray-800 font-medium">Scenario based Example to identify problem-2</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📋</span>
+                      <span class="text-gray-800 font-medium">Problem Identification Assignments</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📄</span>
+                      <span class="text-gray-800 font-medium">Problem Identification Assignments</span>
+                      <span class="ml-auto text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">PDF</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🔁</span>
+                      <span class="text-gray-800 font-medium">Recall</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🌀</span>
+                      <span class="text-gray-800 font-medium">Two Phases of Artificial Intelligence</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">⚙️</span>
+                      <span class="text-gray-800 font-medium">Model Creation Learning Phase-1</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">🚀</span>
+                      <span class="text-gray-800 font-medium">Deployment - Phase-2</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📉</span>
+                      <span class="text-gray-800 font-medium">Algorithms</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📈</span>
+                      <span class="text-gray-800 font-medium">Simple Linear Regression</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📊</span>
+                      <span class="text-gray-800 font-medium">SLR - Requirement and Problem Identification</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📚</span>
+                      <span class="text-gray-800 font-medium">Model Creation - Learning Phase - SLR</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📊</span>
+                      <span class="text-gray-800 font-medium">Evaluation Metrics SSE, SSR, SST</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                      <span class="text-purple-700 text-lg">📉</span>
+                      <span class="text-gray-800 font-medium">Evaluation Metrics RMSE, MAE</span>
+                      <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                    </li>
+
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📊</span>
+                          <span class="text-gray-800 font-medium">R_Squared and Adjusted R_Square</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🎯</span>
+                          <span class="text-gray-800 font-medium">The Purpose of Training and Test set</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">💼</span>
+                          <span class="text-gray-800 font-medium">ML in HR Domain - Problem Identification</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📝</span>
+                          <span class="text-gray-800 font-medium">Mapping the code with Phases</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">💻</span>
+                          <span class="text-gray-800 font-medium">Hands-on - SLR</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🛠️</span>
+                          <span class="text-gray-800 font-medium">Hands-on - Model Creation Learning phase-1</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">💾</span>
+                          <span class="text-gray-800 font-medium">Hands-on - How to save model</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🚀</span>
+                          <span class="text-gray-800 font-medium">Hands-on - Deployment Phase</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📋</span>
+                          <span class="text-gray-800 font-medium">How to do Assignment - Baby Step-2</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🔄</span>
+                          <span class="text-gray-800 font-medium">Recall</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📊</span>
+                          <span class="text-gray-800 font-medium">Multiple Linear Regression</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📈</span>
+                          <span class="text-gray-800 font-medium">PS AI in Business Intelligence</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🏷️</span>
+                          <span class="text-gray-800 font-medium">Nominal and Ordinal</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🛠️</span>
+                          <span class="text-gray-800 font-medium">Hands-on - MLR-1</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🛠️</span>
+                          <span class="text-gray-800 font-medium">Hands-on - MLR-2</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📉</span>
+                          <span class="text-gray-800 font-medium">SVM</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🛠️</span>
+                          <span class="text-gray-800 font-medium">Hands-on - SVM</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🌲</span>
+                          <span class="text-gray-800 font-medium">Decision Tree</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🛠️</span>
+                          <span class="text-gray-800 font-medium">Hands-On - Decision Tree</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">⚙️</span>
+                          <span class="text-gray-800 font-medium">Hyper Tuning Parameter</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Online Exercise</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🌲</span>
+                          <span class="text-gray-800 font-medium">Random Forest</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🛠️</span>
+                          <span class="text-gray-800 font-medium">Hands-on - RF</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📝</span>
+                          <span class="text-gray-800 font-medium">Assignments - Regression - Baby Step-3</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📄</span>
+                          <span class="text-gray-800 font-medium">Regression Assignment</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">PDF</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📈</span>
+                          <span class="text-gray-800 font-medium">Boosting Algorithm</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🔧</span>
+                          <span class="text-gray-800 font-medium">How to install Library</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🔄</span>
+                          <span class="text-gray-800 font-medium">Cross Validation</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🔍</span>
+                          <span class="text-gray-800 font-medium">GridSearchCV</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🛠️</span>
+                          <span class="text-gray-800 font-medium">Hands-on - GridSearchCV</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">⚙️</span>
+                          <span class="text-gray-800 font-medium">How to select model using GridSearchCV</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📄</span>
+                          <span class="text-gray-800 font-medium">SVR - Grid</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">PDF</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📄</span>
+                          <span class="text-gray-800 font-medium">DR - Grid</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">PDF</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📄</span>
+                          <span class="text-gray-800 font-medium">RF - Grid</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">PDF</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📄</span>
+                          <span class="text-gray-800 font-medium">RF - Grid - Without Training and Testing</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">PDF</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🔧</span>
+                          <span class="text-gray-800 font-medium">Advanced Technique - How to handle preprocessed Input and Output during Deployment</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🛠️</span>
+                          <span class="text-gray-800 font-medium">Hands-on - To handle preprocessed input deployment phase</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">🛠️</span>
+                          <span class="text-gray-800 font-medium">Hands-on - Preprocessed input and output</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">VIDEO</span>
+                        </li>
+                        <li class="flex items-start gap-3 p-3 bg-white rounded-lg shadow hover:shadow-md transition">
+                          <span class="text-purple-700 text-lg">📝</span>
+                          <span class="text-gray-800 font-medium">MCQ - ML Regression</span>
+                          <span class="ml-auto text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Online Exercise</span>
+                        </li>
+                  </ul>
+                  
+
+
+
+            </details>
+
+
+
+
+
+        </div>
+      </div> 
+  
+      <!-- Right: Call-to-Actions -->
+      <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-6 text-left">
+        <h2 class="text-2xl font-bold text-purple-700">Register Now!</h2>
+        <p class="text-gray-700 font-medium">Get 1:1 Call Booking</p>
+        <div class="bg-purple-100 p-4 rounded-md">
+          <p class="text-lg font-semibold text-gray-900">All Modules</p>
+          <p class="text-2xl font-bold text-purple-700">Rs. 30,000</p>
+          <button class="w-full mt-2 bg-purple-700 text-white py-2 rounded-md font-semibold hover:bg-purple-800 transition duration-300">
+            Book Now
+          </button>
+        </div>
+  
+        <p class="text-gray-700 font-medium">Webinar Offer</p>
+        <div class="bg-purple-100 p-4 rounded-md">
+          <p class="text-lg font-semibold text-gray-900">All Modules</p>
+          <p class="text-2xl font-bold text-purple-700">Rs. 40,000</p>
+          <button class="w-full mt-2 bg-purple-700 text-white py-2 rounded-md font-semibold hover:bg-purple-800 transition duration-300">
+            Register Webinar
+          </button>
+        </div>
+  
+        <p class="text-gray-700 font-medium">Form Offer</p>
+        <div class="bg-purple-100 p-4 rounded-md">
+          <p class="text-lg font-semibold text-gray-900">All Modules</p>
+          <p class="text-2xl font-bold text-purple-700">Rs. 50,000</p>
+          <button class="w-full mt-2 bg-purple-700 text-white py-2 rounded-md font-semibold hover:bg-purple-800 transition duration-300">
+            Submit Form
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  </script>
+
+  <!-- Nva bar end -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>

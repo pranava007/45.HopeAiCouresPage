@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Weeks UI</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <style>
+    #weeks-container {
+      max-height: 500px;  /* Adjust height based on your requirement */
+      overflow-y: auto;   /* Enables vertical scrolling */
+      padding-right: 10px; /* Adds some padding for the scrollbar */
+      /* background-color: #ffffff; Light background for better readability */
+      border-radius: 12px; /* Rounded corners for a modern look */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      scroll-behavior: smooth;  /* Smooth scrolling */
+    }
+  
+    /* Custom Scrollbar */
+    #weeks-container::-webkit-scrollbar {
+      width: 8px; /* width of the scrollbar */
+    }
+  
+    #weeks-container::-webkit-scrollbar-thumb {
+      background-color: #888;  /* Color of the scrollbar */
+      border-radius: 10px;  /* Rounded edges */
+    }
+  
+    #weeks-container::-webkit-scrollbar-thumb:hover {
+      background-color: #555; /* Darker color on hover */
+    }
+  
+    /* Hover effect for items inside the container */
+    #weeks-container > .space-y-4 > div:hover {
+      background-color: #ffffff; /* White background on hover */
+      color: #333333; /* Darker text color */
+      padding: 10px; /* Subtle padding increase */
+      border-radius: 8px; /* Smooth rounded edges on hover */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+      transition: all 0.3s ease; /* Smooth transition effect */
+    }
+  
+    /* Add Tailwind CSS specific for hover */
+    #weeks-container > .space-y-4 > div {
+      transition: all 0.3s ease;
+    }
+  
+  </style>
+
+
+</head>
+<body>
+
+
+    <section class="bg-purple-100 shadow-inner w-full mt-2">
+        <div class="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Left: Accordion Content -->
+          <div class="lg:col-span-2 space-y-6 text-left">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-700 leading-tight">
+              Full Stack Artificial Intelligence & Data Science Course - Syllabus
+            </h1>
+
+            <!-- <div id="weeks-container" class="space-y-4 max-w-3xl mx-auto">
+
+            </div> -->
+
+            <div id="weeks-container" class="space-y-4 p-10 bg-opacity-10 max-w-3xl mx-auto rounded-lg shadow-lg overflow-y-auto">
+                
+            </div>
+
+
+        </div>
+
+            <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-6 text-left">
+                <h2 class="text-2xl font-bold text-purple-700">Register Now!</h2>
+               
+                <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-6 text-left">
+                    <!-- Title with icon on the left -->
+                    <p class="text-gray-700 font-medium flex items-center gap-2">
+                      <!-- Phone Icon (1:1 Call Booking) -->
+                      📞
+                      Get 1:1 Call Booking
+                    </p>
+                    
+                    <!-- Card with a smooth border and shadow -->
+                    <div class="bg-purple-100 p-4 rounded-md border-2 border-purple-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-500 hover:border-purple-400 transition duration-300 ease-in-out">
+                      <p class="text-lg font-semibold text-gray-900">All Modules</p>
+                      <p class="text-2xl font-bold text-purple-700">Rs. 30,000</p>
+                      <!-- Button with Icon -->
+                      <button class="w-full mt-4 bg-purple-700 text-white py-2 rounded-md font-semibold flex justify-center items-center gap-2 hover:bg-purple-800 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition duration-300">
+                        <!-- Right arrow icon for "Book Now" -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+                        </svg>
+                        Book Now
+                      </button>
+                    </div>
+                  </div>
+           </div>
+            </div>
+            
+          </section>
+
+
+
+
+
+<script>
+    // Sample data
+const weeksContent = [
+  {
+    week: "Week 0 - Ground Work",
+    items: [
+      { icon: "🧠", title: "Mind Preparation", label: "VIDEO" },
+      { icon: "🔔", title: "Important Update", label: "VIDEO" },
+      { icon: "📈", title: "1) Professional Social Media Growth", label: "VIDEO" },
+      { icon: "💼", title: "2) Linkedin-1", label: "VIDEO" },
+      { icon: "💼", title: "3) Linkedin-2", label: "VIDEO" },
+      { icon: "💼", title: "4) Linkedin-3", label: "VIDEO" },
+      { icon: "📝", title: "5) Quiz and Baby Steps", label: "VIDEO" },
+      { icon: "🐙", title: "6) GitHub", label: "YouTube" },
+      { icon: "🧩", title: "7) Extra Assignments", label: "VIDEO" },
+      { icon: "🗒️", title: "8) How to take notes", label: "VIDEO" },
+      { icon: "🚀", title: "9) Lets Start with AI", label: "VIDEO" },
+      { icon: "🔒", title: "LinkedIn Private Group" },
+      { icon: "📦", title: "Download - Resources" },
+      { icon: "⬇️", title: "How to Download Resources", label: "VIDEO" },
+      { icon: "📄", title: "Download Resources - Dataset - PPT Link", label: "PDF" }
+    ]
+  },
+
+  {
+    week: "Week 1 - Travel Path",
+    items: [
+      { icon: "🤖", title: "1) What is Artificial Intelligence?", label: "VIDEO" },
+      { icon: "🧠", title: "2) How Artificial Brain Created?", label: "VIDEO" },
+      { icon: "🎯", title: "3) End Goal of AI", label: "VIDEO" },
+      { icon: "💡", title: "4) Application of AI?", label: "VIDEO" },
+      { icon: "📹", title: "5) Video Application of AI?", label: "VIDEO" },
+      { icon: "⚖️", title: "6) Comparision Elements AI and HI?", label: "VIDEO" },
+      { icon: "🌐", title: "7) AI-Domain?", label: "VIDEO" },
+      { icon: "🔗", title: "8) Relationship Between Domains?", label: "VIDEO" },
+      { icon: "🧭", title: "9) Domain Selection?", label: "VIDEO" },
+      { icon: "📊", title: "10) Domain Selection - Dataset - Must Watch?", label: "VIDEO" },
+      { icon: "🔍", title: "11) Why Data Science?", label: "VIDEO" },
+      { icon: "🧍‍♂️", title: "12) Only a man-like is AI?", label: "VIDEO" },
+      { icon: "🐍", title: "13) Relation between AI and Python?", label: "VIDEO" },
+      { icon: "🛠️", title: "14) Relationship Between Spyder-Anaconda-jupyter-Python?", label: "VIDEO" },
+      { icon: "🏛️", title: "15) Traditional Vs AI?", label: "VIDEO" },
+      { icon: "💸", title: "16) How to Make money using AI?", label: "VIDEO" },
+      { icon: "❤️", title: "17) Heart of AI?", label: "VIDEO" },
+      { icon: "📝", title: "Test - 1", label: "Online Exercise" }
+    ]
+  },
+
+  {
+    week: "Week 2 - Python",
+    items: [
+      { icon: "🐍", title: "Python Tool Names?" ,label: "VIDEO"},
+      { icon: "🔍", title: "Checking requirements?" ,label: "VIDEO"},
+      { icon: "⬇️", title: "How to download Anaconda Software?" ,label: "VIDEO"},
+      { icon: "🛠️", title: "Anaconda Installation Process" ,label: "VIDEO"},
+      { icon: "📓", title: "How to open Jupyter Notebook?" ,label: "VIDEO"},
+      { icon: "💡", title: "Purpose of Programming Language?",label: "VIDEO" },
+      { icon: "🖨️", title: "Print_Statement-1?",label: "VIDEO" },
+      { icon: "🖨️", title: "Print Statemen-2?",label: "VIDEO" },
+      { icon: "🧮", title: "Variable & Assignment Operator?" ,label: "VIDEO"},
+      { icon: "🧪", title: "Variable Hands-on",label: "VIDEO" },
+      { icon: "✨", title: "Pro-Secret to write efficient code?" ,label: "VIDEO"},
+      { icon: "⌨️", title: "Input Statement?" ,label: "VIDEO"},
+      { icon: "📝", title: "Input_Statement_Update",label: "VIDEO" },
+      { icon: "🧠", title: "Test - 2", label: "Online Exercise",label: "VIDEO" },
+      { icon: "🔁", title: "Control Structures-If?" ,label: "VIDEO"},
+      { icon: "🧱", title: "Indentation",label: "VIDEO" },
+      { icon: "🔀", title: "if-else?" ,label: "VIDEO"},
+      { icon: "🪜", title: "if-elif?",label: "VIDEO" },
+      { icon: "📌", title: "if-overview?",label: "VIDEO" },
+      { icon: "🔂", title: "for-loop?",label: "VIDEO" },
+      { icon: "🧠", title: "How to write logic?",label: "VIDEO" },
+      { icon: "📏", title: "Range" ,label: "VIDEO"},
+      { icon: "✅", title: "How to finish Assignments?" ,label: "VIDEO"},
+      { icon: "📄", title: "Baby Steps Control Structures", label: "PDF" },
+      { icon: "📄", title: "Extra Assignment-level-1-python", label: "PDF" },
+      { icon: "📄", title: "Extra Assignment-2-Level-2-python", label: "PDF" },
+      { icon: "📄", title: "Extra Assignment-Level-3-Python", label: "PDF" },
+      { icon: "🔁", title: "Recall" ,label: "VIDEO"},
+      { icon: "🎯", title: "OOps",label: "VIDEO" },
+      { icon: "🧩", title: "Function-1" ,label: "VIDEO"},
+      { icon: "🧩", title: "Functions-2" ,label: "VIDEO"},
+      { icon: "🧩", title: "Function-3",label: "VIDEO" },
+      { icon: "🧩", title: "Function-4" ,label: "VIDEO"},
+      { icon: "🧩", title: "Function-5" ,label: "VIDEO"},
+      { icon: "📄", title: "Function-Assignment-1", label: "PDF" },
+      { icon: "📝", title: "Function-Assignments",label: "VIDEO" },
+      { icon: "🏷️", title: "Class-1",label: "VIDEO" },
+      { icon: "🏷️", title: "Class-2" ,label: "VIDEO"},
+      { icon: "🏷️", title: "Class-3" ,label: "VIDEO"},
+      { icon: "🏷️", title: "Class-1-Assignments" ,label: "VIDEO"},
+      { icon: "📄", title: "Class-Assignments-1", label: "PDF" },
+      { icon: "🏷️", title: "Class-2-Assignments" },
+      { icon: "🧠", title: "Test - 3", label: "Online Exercise" },
+      { icon: "❓", title: "Python - Interview Question", label: "External Link" },
+      { icon: "🧠", title: "MCQ-Python", label: "Online Exercise" }
+    ]
+  },
+  {
+    week: "Week 3 - Machine Learning - Regression",
+    items: [
+    { icon: "🧠", title: "Problem Identification in AI" },
+  { icon: "🔍", title: "How to identify Supervised Learning" },
+  { icon: "🔎", title: "How to identify Unsupervised Learning" },
+  { icon: "⚖️", title: "Difference Btw Super and Unsuper - Scenario Based" },
+  { icon: "🧪", title: "How to identify Semi Supervised" },
+  { icon: "📊", title: "How to identify Supervised - Classification and Regression" },
+  { icon: "🗺️", title: "Mapping Domains with Learning" },
+  { icon: "📘", title: "Scenario based Example to identify problem - 1" },
+  { icon: "🗂️", title: "Scenario based Example to identify problem - 1 - Dataset" },
+  { icon: "📙", title: "Scenario based Example to identify problem - 2" },
+  { icon: "✍️", title: "Problem Identification Assignments" },
+  { icon: "📄", title: "Problem Identification Assignments", label: "PDF" },
+  { icon: "🔁", title: "Recall" },
+  { icon: "🧠", title: "Two Phases of Artificial Intelligence" },
+  { icon: "🏗️", title: "Model Creation Learning Phase - 1" },
+  { icon: "🚀", title: "Deployment - Phase - 2" },
+  { icon: "⚙️", title: "Algorithms" },
+      { icon: "📉", title: "Simple Linear Regression" },
+      { icon: "📉", title: "SLR-Requirement and Problem Identification" },
+      { icon: "🛠️", title: "Model Creation-Learning -Phase-SLR" },
+      { icon: "📊", title: "Evaluation Metrics SSE, SSR, SST" },
+      { icon: "📏", title: "R_Squared and AdjustedR_Square" },
+      { icon: "📂", title: "The Purpose of Training and Test set" },
+      { icon: "🏢", title: "ML in HR Domain -Problem Identification" },
+      { icon: "🧩", title: "Mapping the code with Phases" },
+      { icon: "🧪", title: "Hands-on-SLR" },
+      { icon: "🧪", title: "Hands-on-Model Creation Learning phase-1" },
+      { icon: "💾", title: "Hands-on-How to save model" },
+      { icon: "🚀", title: "Hands on deployment Phase" },
+      { icon: "📌", title: "How to do Assignment-Baby Step-2" },
+      { icon: "🔁", title: "Recall" },
+      { icon: "📉", title: "Multiple Linear Regression" },
+      { icon: "📊", title: "PS Ai in Business Intelligence" },
+      { icon: "🔠", title: "Nominal and Ordinal" },
+      { icon: "🧪", title: "Hands-on-MLR-1" },
+      { icon: "🧪", title: "Hands-on-MLR-2" },
+      { icon: "📈", title: "SVM" },
+      { icon: "📏", title: "Standard" },
+      { icon: "🧠", title: "ML-Secret" },
+      { icon: "🧪", title: "Hands-on-SVM" },
+      { icon: "🌳", title: "Decision Tree" },
+      { icon: "🧪", title: "Hands-On Decision Tree" },
+      { icon: "🧠", title: "Hyper Tuning parameter", label: "Online Exercise" },
+      { icon: "🌲", title: "Random Forest" },
+      { icon: "🧪", title: "Hands-on-RF" },
+      { icon: "🧠", title: "Assignments-Regression-Baby Step-3" },
+      { icon: "📄", title: "Regression Assignment", label: "PDF" },
+      { icon: "⚡", title: "Boosting Algorithm" },
+      { icon: "⬇️", title: "How to install Library" },
+      { icon: "🔁", title: "Cross Validation" },
+      { icon: "🔍", title: "GridSearchCV" },
+      { icon: "🧪", title: "Hands-on GridsearchCV" },
+      { icon: "📌", title: "How to select model using GridsearchCV" },
+      { icon: "📄", title: "SVR-Grid", label: "PDF" },
+      { icon: "📄", title: "DR-Grid", label: "PDF" },
+      { icon: "📄", title: "RF-Grid", label: "PDF" },
+      { icon: "📄", title: "RF-Grid-Without Training and Testing", label: "PDF" },
+      { icon: "💡", title: "Advanced Technique - How to handle preprocessed Input and Output during Deployment" },
+      { icon: "🧪", title: "Hands-on - To handle preprocessed input deployment phase" },
+      { icon: "🧪", title: "Hands-on - Preprocessed input and output" },
+      { icon: "🧠", title: "MCQ - ML Regression", label: "Online Exercise" }
+    ]
+  },
+
+  {
+  week: "Week 4.1 - Machine Learning - Classification",
+  items: [
+    { icon: "🎥", title: "Intro to Classification", label: "VIDEO" },
+    { icon: "🎥", title: "Hands-on walkthrough", label: "VIDEO" },
+    { icon: "📊", title: "Confusion Matrix - 1", label: "VIDEO" },
+    { icon: "📊", title: "Confusion Matrix - 2", label: "VIDEO" },
+    { icon: "🧪", title: "Hands-on - Random Forest (RF)", label: "VIDEO" },
+    { icon: "🌳", title: "Hands-on - Decision Tree (DT)", label: "VIDEO" },
+    { icon: "📈", title: "Hands-on - Support Vector Machine (SVM)", label: "VIDEO" },
+    { icon: "📉", title: "Logistic Regression", label: "VIDEO" },
+    { icon: "🧪", title: "Hands-on - Logistic Regression", label: "VIDEO" },
+    { icon: "🔵", title: "K-Nearest Neighbors (KNN)", label: "VIDEO" },
+    { icon: "🧪", title: "KNN - Hands-on", label: "VIDEO" },
+    { icon: "🔵", title: "Naive Bayes", label: "VIDEO" },
+    { icon: "🧪", title: "Hands-on - Naive Bayes", label: "VIDEO" },
+    { icon: "🎬", title: "All Algorithms - Must Watch", label: "VIDEO" },
+    { icon: "🧪", title: "Grid-Log - Hands-on", label: "VIDEO" },
+    { icon: "🔧", title: "Grid SVM - DT - RF", label: "VIDEO" },
+    { icon: "📄", title: "Assignment - Classification", label: "VIDEO" },
+    { icon: "📄", title: "Assignment - Classification", label: "PDF" },
+    { icon: "📝", title: "MCQ - ML Classification", label: "Online Exercise" }
+  ]
+},
+
+{
+  week: "Week 4.2 - Machine Learning - Clustering",
+  items: [
+    { icon: "🎥", title: "Virtual Environment", label: "VIDEO" },
+    { icon: "🧪", title: "Virtual - Hands-on", label: "VIDEO" },
+    { icon: "📊", title: "K-Means Clustering", label: "VIDEO" },
+    { icon: "🧪", title: "KMeans - Hands-on 1", label: "VIDEO" },
+    { icon: "🧪", title: "KMeans - Hands-on 2", label: "VIDEO" },
+    { icon: "🔍", title: "K-Means - Code Explanation", label: "VIDEO" },
+    { icon: "🌳", title: "Agglomerative", label: "VIDEO" },
+    { icon: "📄", title: "Assignment - Clustering", label: "VIDEO" },
+    { icon: "🎬", title: "All Clustering Explanations", label: "VIDEO" },
+    { icon: "🔗", title: "Question Bank - Machine Learning", label: "External Link" },
+    { icon: "📝", title: "MCQ - ML Clustering", label: "Online Exercise" }
+  ]
+},
+
+{
+  week: "Week 4.3 - Important Practice - Coding and Error Handling",
+  items: [
+    { icon: "🔄", title: "Code Flow", label: "VIDEO" },
+    { icon: "🔐", title: "Secret Hack to Write Optimized Code", label: "VIDEO" },
+    { icon: "⚠️", title: "Syntax Error", label: "VIDEO" },
+    { icon: "📝", title: "MCQ - Error Handling", label: "Online Exercise" }
+  ]
+},
+{
+  week: "Add-on-1: Self Branding - LinkedIn",
+  items: [
+    { icon: "📱", title: "Self Branding - LinkedIn", label: "VIDEO" },
+    { icon: "💼", title: "Self Branding LinkedIn", label: "VIDEO" },
+    { icon: "📚", title: "Important Groups to Follow", label: "VIDEO" },
+    { icon: "📝", title: "How to Prepare the Content for Self Branding", label: "VIDEO" },
+    { icon: "💻", title: "How to Add Python Notebook", label: "VIDEO" },
+    { icon: "🎨", title: "How to Edit Canva Post", label: "VIDEO" },
+    { icon: "📤", title: "How to Post in LinkedIn and Groups", label: "VIDEO" },
+    { icon: "📄", title: "LinkedIn Group", label: "PDF" },
+    { icon: "📲", title: "Social Media LinkedIn", label: "PDF" },
+    { icon: "📊", title: "GitHub Dashboard", label: "VIDEO" }
+  ]
+},
+{
+  "week": "Week-5-Data Science-Univariate Analysis",
+  "items": [
+    { "icon": "📊", "title": "Intro to Data-Science", "label": "VIDEO" },
+    { "icon": "🔍", "title": "Types of Analysis", "label": "VIDEO" },
+    { "icon": "📂", "title": "Types of Column", "label": "VIDEO" },
+    { "icon": "📏", "title": "Quan and Qual-1", "label": "VIDEO" },
+    { "icon": "📐", "title": "Quan and Qual-2", "label": "VIDEO" },
+    { "icon": "🧮", "title": "Concepts under Univariate", "label": "VIDEO" },
+    { "icon": "📊", "title": "Measure of Central Tendency", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "MCT-hands-on-1", "label": "VIDEO" },
+    { "icon": "🖱️", "title": "Hands-on-MCT-2", "label": "VIDEO" },
+    { "icon": "📏", "title": "Percentile", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Percentile-Hands-on", "label": "VIDEO" },
+    { "icon": "⚖️", "title": "IQR", "label": "VIDEO" },
+    { "icon": "🧮", "title": "Hands-on-IQR", "label": "VIDEO" },
+    { "icon": "🔍", "title": "Finding-Outliers column", "label": "VIDEO" },
+    { "icon": "🔧", "title": "Replacing Outliers", "label": "VIDEO" },
+    { "icon": "🔢", "title": "Frequency", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on Frequency", "label": "VIDEO" },
+    { "icon": "💼", "title": "LinkedIn Post", "label": "VIDEO" },
+    { "icon": "📊", "title": "Histogram, Skewness, Kurtosis", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on HSK", "label": "VIDEO" },
+    { "icon": "📚", "title": "Data-Preprocessing-Hands-on", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Data-Preprocessing-update", "label": "VIDEO" },
+    { "icon": "⚖️", "title": "Variance and Std variance", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on Std and Variance", "label": "VIDEO" },
+    { "icon": "📉", "title": "Normal Distribution", "label": "VIDEO" },
+    { "icon": "📊", "title": "Probability Density Function", "label": "VIDEO" },
+    { "icon": "🖱️", "title": "Hands-on-PDF-CDF", "label": "VIDEO" },
+    { "icon": "📈", "title": "Hands-on-CDF", "label": "VIDEO" },
+    { "icon": "📐", "title": "Standard Normal Distribution", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on-SND", "label": "VIDEO" },
+    { "icon": "⚖️", "title": "Z-Score", "label": "VIDEO" },
+    { "icon": "🧮", "title": "Z-Score Application", "label": "VIDEO" },
+    { "icon": "📚", "title": "MCQ- DS (Univariate)", "label": "Online Exercise" }
+  ]
+},
+
+{
+  "week": "Week-6-Data Science-Bivariate Analysis",
+  "items": [
+    { "icon": "📉", "title": "Co-Variance and Correlation", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on-Covariance and Correlation", "label": "VIDEO" },
+    { "icon": "📚", "title": "Assignment Solution", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Multicolinearity", "label": "VIDEO" },
+    { "icon": "🧮", "title": "Hands-on-VIF", "label": "VIDEO" },
+    { "icon": "🔬", "title": "Hemo and Hetro", "label": "VIDEO" },
+    { "icon": "📊", "title": "T-Test", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on-T-Test", "label": "VIDEO" },
+    { "icon": "💡", "title": "Hypothesis Testing", "label": "VIDEO" },
+    { "icon": "🖱️", "title": "Hypothesis Hands-on", "label": "VIDEO" },
+    { "icon": "📈", "title": "ANAVO", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on ANAVO", "label": "VIDEO" },
+    { "icon": "📚", "title": "Assignment-Data Analysis", "label": "VIDEO" },
+    { "icon": "📄", "title": "Assignment Question PDF", "label": "PDF" },
+    { "icon": "🔗", "title": "Question Bank-Data Science", "label": "External Link" },
+    { "icon": "💻", "title": "MCQ- DS (Bivariate)", "label": "Online Exercise" }
+  ]
+},
+{
+  "week": "Week-7-Data Visualization-Seaborn-Tableau-Data Studio",
+  "items": [
+    { "icon": "📊", "title": "Seaborn-1", "label": "VIDEO" },
+    { "icon": "📈", "title": "Seaborn-2", "label": "VIDEO" },
+    { "icon": "📅", "title": "Data Studio-1", "label": "VIDEO" },
+    { "icon": "📊", "title": "Data Studio-2", "label": "VIDEO" },
+    { "icon": "📉", "title": "Data Studio-3", "label": "VIDEO" },
+    { "icon": "📊", "title": "Tableau-1", "label": "VIDEO" },
+    { "icon": "📈", "title": "Tableau-2", "label": "VIDEO" },
+    { "icon": "📊", "title": "Tableau-3", "label": "VIDEO" },
+    { "icon": "📂", "title": "Zomato Dataset", "label": "VIDEO" },
+    { "icon": "📄", "title": "Assignment Zomato Dataset", "label": "PDF" },
+    { "icon": "💻", "title": "MCQ- Data Visualization", "label": "Online Exercise" }
+  ]
+},
+
+{
+  "week": "Week-8.1: Advanced ML - Feature Selection",
+  "items": [
+    { "icon": "📉", "title": "Feature Selection and Dimension Reduction", "label": "VIDEO" },
+    { "icon": "🔢", "title": "Select k Algorithm", "label": "VIDEO" },
+    { "icon": "💻", "title": "Hands-on Select K algorithm", "label": "VIDEO" },
+    { "icon": "📊", "title": "RFE", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on-RFE", "label": "VIDEO" },
+    { "icon": "⚙️", "title": "Advanced ML flow", "label": "VIDEO" },
+    { "icon": "💡", "title": "MCQ- Advanced ML (Feature Selection)", "label": "Online Exercise" }
+  ]
+},
+
+{
+  "week": "Week-8.2: Advanced ML - Dimensionality Reduction",
+  "items": [
+    { "icon": "🔢", "title": "Scalar and Vector", "label": "VIDEO" },
+    { "icon": "📉", "title": "PCA", "label": "VIDEO" },
+    { "icon": "💻", "title": "Hands-on PCA", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on LDA", "label": "VIDEO" },
+    { "icon": "🔗", "title": "Question Bank - Machine Learning", "label": "External Link" },
+    { "icon": "💡", "title": "MCQ - Advanced ML (Dimensionality Reduction)", "label": "Online Exercise" }
+  ]
+},
+
+{
+  "week": "Advanced Techniques",
+  "items": [
+    { "icon": "⚙️", "title": "Fit", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Fit_Transform", "label": "VIDEO" },
+    { "icon": "🔁", "title": "Transform", "label": "VIDEO" },
+    { "icon": "📉", "title": "Over fitting", "label": "VIDEO" },
+    { "icon": "📈", "title": "Under fitting", "label": "VIDEO" },
+    { "icon": "✅", "title": "Best fitting", "label": "VIDEO" },
+    { "icon": "🔀", "title": "Two cases", "label": "VIDEO" },
+    { "icon": "💻", "title": "Hands-on - To handle preprocessed input deployment phase", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Hands-on - Preprocessed input and output", "label": "VIDEO" }
+  ]
+},
+
+
+  {
+    "week": "Week 9.1: Machine Learning and Data Science Capstone Project",
+    "items": [
+      { "icon": "📝", "title": "Assignment Instruction", "label": "VIDEO" },
+      { "icon": "🖥️", "title": "MCQ- ML & DS Capstone Project", "label": "Online Exercise" },
+      { "icon": "📊", "title": "How to collect dataset for Machine Learning?", "label": "YouTube" }
+    ]
+  },
+  {
+    "week": "Week 9.2: Web Development - Shortcut Way",
+    "items": [
+      { "icon": "💻", "title": "Web Development-1", "label": "VIDEO" },
+      { "icon": "💻", "title": "Web Development-2", "label": "VIDEO" },
+      { "icon": "💻", "title": "Web Development-3", "label": "VIDEO" },
+      { "icon": "💻", "title": "Web Develop-4", "label": "VIDEO" },
+      { "icon": "🖥️", "title": "MCQ- Web Development", "label": "Online Exercise" }
+    ]
+  },
+  {
+  "week": "Week 9.3: Web Development Detailed Way",
+  "items": [
+    { "icon": "🌐", "title": "Intro to Web Development", "label": "VIDEO" },
+    { "icon": "💻", "title": "Web Development Demo", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Create project and App", "label": "VIDEO" },
+    { "icon": "⚙️", "title": "Setup Must watch", "label": "VIDEO" },
+    { "icon": "⚙️", "title": "Settings", "label": "VIDEO" },
+    { "icon": "📝", "title": "Forms", "label": "VIDEO" },
+    { "icon": "📦", "title": "Models", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Input Html page", "label": "VIDEO" },
+    { "icon": "📊", "title": "Views-1", "label": "VIDEO" },
+    { "icon": "📬", "title": "Get and Post", "label": "VIDEO" },
+    { "icon": "🔧", "title": "Backend View", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Processed Output", "label": "VIDEO" },
+    { "icon": "🖥️", "title": "Output page", "label": "VIDEO" },
+    { "icon": "🔗", "title": "APP urls", "label": "VIDEO" },
+    { "icon": "🌍", "title": "Project URL", "label": "VIDEO" },
+    { "icon": "💬", "title": "Data base comment", "label": "VIDEO" },
+    { "icon": "🔍", "title": "Classification Walkthrough", "label": "VIDEO" }
+  ]
+},
+{
+  "week": "Week 10: Recommendation System",
+  "items": [
+    { "icon": "👤", "title": "User based- Intuition", "label": "VIDEO" },
+    { "icon": "👨‍💻", "title": "User Based-1-Hands-On", "label": "VIDEO" },
+    { "icon": "👨‍💻", "title": "User-Based-2-Hands-On", "label": "VIDEO" },
+    { "icon": "📦", "title": "Item based Recommendation System", "label": "VIDEO" },
+    { "icon": "🔧", "title": "Hands-on Item based", "label": "VIDEO" },
+    { "icon": "📑", "title": "Content Based Recommendation", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on CBR-1", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on CBR-2", "label": "VIDEO" },
+    { "icon": "📊", "title": "Popularity based", "label": "VIDEO" },
+    { "icon": "💻", "title": "MCQ- Recommendation System", "label": "Online Exercise" }
+  ]
+},
+{
+  "week": "Week 10.1: MySQL",
+  "items": [
+    { "icon": "📝", "title": "What is SQL and Why?", "label": "VIDEO" },
+    { "icon": "💻", "title": "Installation Process for MySQL-Workbench", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Difference between Database and Tables", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "SQL Commands Segregation", "label": "VIDEO" },
+    { "icon": "➕", "title": "How to Create Database and Table in mySql", "label": "VIDEO" },
+    { "icon": "📊", "title": "Creating Table", "label": "VIDEO" },
+    { "icon": "📚", "title": "Data Definition Language-1", "label": "VIDEO" },
+    { "icon": "🔑", "title": "Primary Key vs Foreign Keys", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Data Manipulation Language-1-Insert, Update", "label": "VIDEO" },
+    { "icon": "⚙️", "title": "Transaction Control Language- Transaction, Savepoint, Rollback, Commit", "label": "VIDEO" },
+    { "icon": "🔍", "title": "Data Query Language and Data Retrieval Language", "label": "VIDEO" },
+    { "icon": "🔍", "title": "DQL-DRL-2", "label": "VIDEO" },
+    { "icon": "🔗", "title": "Joins Purpose", "label": "VIDEO" },
+    { "icon": "🔗", "title": "Join-Inner, Left, Right", "label": "VIDEO" },
+    { "icon": "🔗", "title": "Join- Natural Joins", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Join- hands on", "label": "VIDEO" },
+    { "icon": "🔐", "title": "Data Control Language- Grant, Revoke", "label": "VIDEO" },
+    { "icon": "📚", "title": "How to do Assignments-Amazon-Netflix", "label": "VIDEO" },
+    { "icon": "📖", "title": "Question Bank- SQL", "label": "External Link" },
+    { "icon": "💻", "title": "MCQ- MySQL", "label": "Online Exercise" }
+  ]
+},
+{
+  "week": "Week 11: Deep Learning Module",
+  "items": [
+    { "icon": "🤖", "title": "How Deep Learning differs from Machine Learning", "label": "VIDEO" },
+    { "icon": "🧠", "title": "How Human Brain works-Neural Network", "label": "VIDEO" },
+    { "icon": "🖼️", "title": "How Computer Understands Image", "label": "VIDEO" },
+    { "icon": "🔢", "title": "ANN-1", "label": "VIDEO" },
+    { "icon": "🔢", "title": "ANN-2", "label": "VIDEO" },
+    { "icon": "🔢", "title": "ANN-3", "label": "VIDEO" },
+    { "icon": "🎥", "title": "ANN Visual Video from 3 Blue 1 Brown", "label": "Youtube" },
+    { "icon": "🎥", "title": "Gradient descent, how neural networks learn | Chapter 2, Deep learning", "label": "Youtube" },
+    { "icon": "🎥", "title": "What is backpropagation really doing? | Chapter 3, Deep learning", "label": "Youtube" },
+    { "icon": "🎥", "title": "Backpropagation calculus | Chapter 4, Deep learning", "label": "Youtube" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-1", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-2", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-3", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-4", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-5", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-6", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-7", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-8", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-9", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-ANN-10", "label": "VIDEO" },
+    { "icon": "🧠", "title": "CNN-1", "label": "VIDEO" },
+    { "icon": "🧠", "title": "CNN-2", "label": "VIDEO" },
+    { "icon": "🧠", "title": "CNN-3", "label": "VIDEO" },
+    { "icon": "🧠", "title": "CNN-4", "label": "VIDEO" },
+    { "icon": "🧠", "title": "CNN-5", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "CNN-6-Hands-on", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "CNN-7-Hands-on", "label": "VIDEO" },
+    { "icon": "🔍", "title": "How to explore more codes", "label": "VIDEO" },
+    { "icon": "📦", "title": "Pre-Trained Model", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Transfer Learning", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Transfer Learning Matrix", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Deep Learning flow", "label": "VIDEO" },
+    { "icon": "📚", "title": "Library Update", "label": "VIDEO" },
+    { "icon": "😷", "title": "Face Mask Detection-1", "label": "VIDEO" },
+    { "icon": "😷", "title": "Face Mask Detection-2", "label": "VIDEO" },
+    { "icon": "😷", "title": "Face Mask Detection-3", "label": "VIDEO" },
+    { "icon": "😷", "title": "Face Mask Detection-4", "label": "VIDEO" },
+    { "icon": "😷", "title": "Face Mask Detection-5 & Assignment at end(Must Do)", "label": "VIDEO" },
+    { "icon": "🧠", "title": "How to do AI Application using Pre-Trained Models", "label": "VIDEO" },
+    { "icon": "🎓", "title": "Deep Learning Assignment Must Do", "label": "VIDEO" },
+    { "icon": "📖", "title": "Question Bank- Deep Learning", "label": "External Link" },
+    { "icon": "💻", "title": "MCQ- Deep Learning", "label": "Online Exercise" },
+    { "icon": "🎥", "title": "How to collect dataset for Deep Learning?", "label": "Youtube" }
+  ]
+},
+{
+  "week": "Week 12: Time Series Analysis",
+  "items": [
+    { "icon": "📊", "title": "Intro to Time Series", "label": "VIDEO" },
+    { "icon": "📉", "title": "Share Market basic", "label": "VIDEO" },
+    { "icon": "🔢", "title": "Time Series is a Regression", "label": "VIDEO" },
+    { "icon": "⚙️", "title": "Time series vs ML Regression", "label": "VIDEO" },
+    { "icon": "📈", "title": "Components in Time Series", "label": "VIDEO" },
+    { "icon": "💡", "title": "Assumption in Time Series", "label": "VIDEO" },
+    { "icon": "🔧", "title": "How to overcome Non-Stationarity Series", "label": "VIDEO" },
+    { "icon": "📊", "title": "EDA-Stock Data", "label": "VIDEO" },
+    { "icon": "🧪", "title": "Stationarity Check Hypothesis", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Auto Correlation in Time Series", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Partial Auto Correlation", "label": "VIDEO" },
+    { "icon": "🔁", "title": "Auto Regression-1", "label": "VIDEO" },
+    { "icon": "🔁", "title": "Auto Regression-2", "label": "VIDEO" },
+    { "icon": "🔀", "title": "Training Set and Test Set Split", "label": "VIDEO" },
+    { "icon": "📊", "title": "Model Creation and Forecasting", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "User Defined Function", "label": "VIDEO" },
+    { "icon": "📉", "title": "Moving Average", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Moving Average-Hands-On", "label": "VIDEO" },
+    { "icon": "📈", "title": "ARMA, ARIMA", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-On MA", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on Sarimax", "label": "VIDEO" },
+    { "icon": "🔄", "title": "VAR", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on VAR", "label": "VIDEO" },
+    { "icon": "📖", "title": "Question Bank- Time series", "label": "External Link" },
+    { "icon": "💻", "title": "MCQ- Time Series Analysis", "label": "Online Exercise" }
+  ]
+},
+{
+  "week": "Week-13: Natural Language Processing",
+  "items": [
+    { "icon": "🧠", "title": "Types of Process in NLP", "label": "VIDEO" },
+    { "icon": "💬", "title": "How Computer Understands Text", "label": "VIDEO" },
+    { "icon": "📌", "title": "Problem Statement", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-1", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on-2", "label": "VIDEO" },
+    { "icon": "📐", "title": "TF-IDF Vector", "label": "VIDEO" },
+    { "icon": "📱", "title": "WhatsApp Chat Pre-Processing", "label": "VIDEO" },
+    { "icon": "💬", "title": "WhatsApp Chat", "label": "VIDEO" },
+    { "icon": "😊", "title": "Sentimental Analysis", "label": "VIDEO" },
+    { "icon": "🧩", "title": "Topic Modelling", "label": "VIDEO" },
+    { "icon": "☁️", "title": "Word Cloud", "label": "VIDEO" },
+    { "icon": "📝", "title": "WhatsApp Demo and Assignment", "label": "VIDEO" },
+    { "icon": "📄", "title": "NLP Assignment", "label": "PDF" },
+    { "icon": "📚", "title": "Question Bank - NLP", "label": "External Link" },
+    { "icon": "🧠", "title": "MCQ - NLP", "label": "Online Exercise" }
+  ]
+},
+{
+  "week": "Week-13.1: NLP + Deep Learning (Generative AI)",
+  "items": [
+    { "icon": "🧠", "title": "Introduction to NLP + DL", "label": "VIDEO" },
+    { "icon": "❓", "title": "What is the Need of Word Embedding", "label": "VIDEO" },
+    { "icon": "📦", "title": "Word2Vec Continuous Bag of Words", "label": "VIDEO" },
+    { "icon": "🔄", "title": "Word2Vec Skip Gram", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on Word Embedding", "label": "VIDEO" },
+    { "icon": "🔁", "title": "Introduction to RNN", "label": "VIDEO" },
+    { "icon": "⚠️", "title": "Why RNN is a Failure Model", "label": "VIDEO" },
+    { "icon": "📉", "title": "Sigmoid Tanh", "label": "VIDEO" },
+    { "icon": "🧬", "title": "LSTM1", "label": "VIDEO" },
+    { "icon": "🧬", "title": "LSTM2", "label": "VIDEO" },
+    { "icon": "🔗", "title": "Seq 2 Seq", "label": "VIDEO" },
+    { "icon": "🛠️", "title": "Hands-on LSTM Seq2Seq", "label": "VIDEO" },
+    { "icon": "🚀", "title": "Transformer Introduction", "label": "VIDEO" },
+    { "icon": "🔠", "title": "Transformer Input Embedding", "label": "VIDEO" },
+    { "icon": "📏", "title": "Positional Encoding", "label": "VIDEO" },
+    { "icon": "🔍", "title": "Single Head Query Key Value", "label": "VIDEO" },
+    { "icon": "🔎", "title": "Single Head Attention Filter", "label": "VIDEO" },
+    { "icon": "🧠", "title": "Multi Head Attention", "label": "VIDEO" },
+    { "icon": "🧱", "title": "Residual Connection", "label": "VIDEO" },
+    { "icon": "📤", "title": "Decoder Output Module", "label": "VIDEO" },
+    { "icon": "📚", "title": "Question Bank - NLP", "label": "External Link" },
+    { "icon": "🧠", "title": "MCQ - GenAI", "label": "Online Exercise" }
+  ]
+},
+  {
+    "week": "Week-14: ChatGPT API - Advanced Techniques (Generative AI)",
+    "items": [
+      { "icon": "🔌", "title": "What is API?", "label": "VIDEO" },
+      { "icon": "🤖", "title": "ChatGPT API Introduction", "label": "VIDEO" },
+      { "icon": "💻", "title": "OpenAI API and Level-1 Code", "label": "VIDEO" },
+      { "icon": "⚙️", "title": "Chatbot Model Customized ChatGPT", "label": "VIDEO" },
+      { "icon": "🔗", "title": "Create End User ChatGPT with Sharable Link", "label": "VIDEO" },
+      { "icon": "🏗️", "title": "Building Systems with ChatGPT API - Introduction", "label": "VIDEO" },
+      { "icon": "📝", "title": "BSWC Problem Statement", "label": "VIDEO" },
+      { "icon": "🧠", "title": "BSWC - Classify the Inputs", "label": "VIDEO" },
+      { "icon": "🛡️", "title": "BSWC - Moderation", "label": "VIDEO" },
+      { "icon": "🔁", "title": "BSWC - Chaining Prompting", "label": "VIDEO" },
+      { "icon": "🔗", "title": "BSWC - Chain Prompting - 2", "label": "VIDEO" },
+      { "icon": "🔄", "title": "BSWC - Chain Prompting Continuation", "label": "VIDEO" },
+      { "icon": "✅", "title": "BSWC - Check Outputs", "label": "VIDEO" },
+      { "icon": "🔚", "title": "BSWC - End to End System", "label": "VIDEO" },
+      { "icon": "🧪", "title": "BSWC - Evaluate - 1", "label": "VIDEO" },
+      { "icon": "🧪", "title": "BSWC - Evaluate - 2", "label": "VIDEO" },
+      { "icon": "🌐", "title": "Using Gemini and Ollama", "label": "VIDEO" },
+      { "icon": "🧩", "title": "Ollama Installation", "label": "VIDEO" },
+      { "icon": "🔑", "title": "How to Generate Gemini API", "label": "VIDEO" },
+      { "icon": "🧠", "title": "MCQ - ChatGPT API", "label": "Online Exercise" }
+    ]
+  },
+
+  {
+    "week": "Week-15: Real Time Application with ChatGPT API (Generative AI)",
+    "items": [
+      { "icon": "🌍", "title": "Real Time Implementation Website Demo", "label": "VIDEO" },
+      { "icon": "🗂️", "title": "Overview Flow of Real-Time Application", "label": "VIDEO" },
+      { "icon": "🚧", "title": "Website - AI Chatbot - Step 1", "label": "VIDEO" },
+      { "icon": "🚧", "title": "Website - AI Chatbot - Step 2", "label": "VIDEO" },
+      { "icon": "🚧", "title": "Website - AI Chatbot - Step 3", "label": "VIDEO" },
+      { "icon": "🚧", "title": "Website - AI Chatbot - Step 4", "label": "VIDEO" },
+      { "icon": "🚧", "title": "Website - AI Chatbot - Step 5", "label": "VIDEO" },
+      { "icon": "🔐", "title": "How to Give OpenAI API Key in Replit", "label": "VIDEO" },
+      { "icon": "🚧", "title": "Website - AI Chatbot - Step 6", "label": "VIDEO" },
+      { "icon": "🚧", "title": "Website - AI Chatbot - Step 7", "label": "VIDEO" },
+      { "icon": "🚧", "title": "Website - AI Chatbot - Step 8", "label": "VIDEO" },
+      { "icon": "📚", "title": "Question Bank - LLM", "label": "External Link" },
+      { "icon": "🧠", "title": "MCQ - GenAI Real-time Application", "label": "Online Exercise" }
+    ]
+  },
+
+  {
+    "week": "Week-16: RAG (Retrieval Augmented Generative)",
+    "items": [
+      { "icon": "❓", "title": "Why RAG?", "label": "VIDEO" },
+      { "icon": "⚙️", "title": "Working Principle of RAG", "label": "VIDEO" },
+      { "icon": "🛠️", "title": "Hands-on with Langchain, ChromaDB, Gemini", "label": "VIDEO" },
+      { "icon": "🧠", "title": "MCQ - RAG", "label": "Online Exercise" }
+    ]
+  },
+
+  {
+    "week": "Week-17: Deployment on Google Cloud Platform",
+    "items": [
+      { "icon": "🚀", "title": "Deployment Introduction", "label": "VIDEO" },
+      { "icon": "📝", "title": "Download Editor Notepad", "label": "VIDEO" },
+      { "icon": "☁️", "title": "Deployment Cloud Platforms", "label": "VIDEO" },
+      { "icon": "📋", "title": "Deployment Cloud Procedures", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Running Flask ML application on local host", "label": "VIDEO" },
+      { "icon": "⚙️", "title": "Preparing Environment file", "label": "VIDEO" },
+      { "icon": "🛰️", "title": "Deployment on GCP App Engine Serverless Procedure", "label": "VIDEO" },
+      { "icon": "🐳", "title": "Docker file Introduction", "label": "VIDEO" },
+      { "icon": "📦", "title": "Deployment Procedure Docker Localhost", "label": "VIDEO" },
+      { "icon": "📦", "title": "Deployment Procedure DockerLocalHost2", "label": "VIDEO" },
+      { "icon": "📦", "title": "Deployment Procedure Docker LocalHost 3", "label": "VIDEO" },
+      { "icon": "☁️🐳", "title": "Deployment GCP Through Docker Procedure", "label": "VIDEO" },
+      { "icon": "☁️🔁", "title": "Deployment on GCP Through Kubernetes", "label": "VIDEO" },
+      { "icon": "🔧", "title": "CI/CD - Introduction", "label": "VIDEO" },
+      { "icon": "🔄", "title": "Git-Download-CI/CD", "label": "VIDEO" },
+      { "icon": "⚙️☁️", "title": "GCPCloudBuild-CI/CD", "label": "VIDEO" },
+      { "icon": "🧠", "title": "How CI/CD is changing the Deployment world", "label": "VIDEO" },
+      { "icon": "🗒️", "title": "Yaml Explanation - CI/CD", "label": "VIDEO" },
+      { "icon": "📊", "title": "Overall flow of CI/CD procedure", "label": "VIDEO" },
+      { "icon": "🧠", "title": "MCQ - GCP", "label": "Online Exercise" }
+    ]
+  },
+  {
+    "week": "Interview Questions 1: Python Basics",
+    "items": [
+      { "icon": "🔄", "title": "Conversion-1", "label": "VIDEO" },
+      { "icon": "🔄", "title": "Conversion-2", "label": "VIDEO" },
+      { "icon": "⚡", "title": "One Liner - For Loop", "label": "VIDEO" },
+      { "icon": "🔍", "title": "Lambda Function", "label": "VIDEO" },
+      { "icon": "🔄", "title": "Conversions-3", "label": "VIDEO" },
+      { "icon": "🔄", "title": "Conversions-4", "label": "VIDEO" },
+      { "icon": "🔄", "title": "Conversions-5", "label": "VIDEO" }
+    ]
+  },
+  {
+    "week": "Interview Questions 2: Pandas",
+    "items": [
+      { "icon": "📊", "title": "Melt", "label": "VIDEO" },
+      { "icon": "📊", "title": "Pivot & Pivot Table", "label": "VIDEO" },
+      { "icon": "📊", "title": "Cross Tab", "label": "VIDEO" },
+      { "icon": "✂️", "title": "Cut", "label": "VIDEO" },
+      { "icon": "🔗", "title": "Merge", "label": "VIDEO" },
+      { "icon": "🔗", "title": "Merge Ordered", "label": "VIDEO" },
+      { "icon": "➕", "title": "Concat", "label": "VIDEO" },
+      { "icon": "🏷️", "title": "Get_Dummies", "label": "VIDEO" },
+      { "icon": "🏷️", "title": "From Dummies", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas_Handson-1", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas_Handson-2", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas_Handson-3", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas_Handson-4", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas_Handson-5", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-6", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-7", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-8", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-9", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-10", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-11", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-12", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-13", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-14", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Pandas Handson-15", "label": "VIDEO" },
+      { "icon": "📘", "title": "Question Bank- Pandas", "label": "External Link" }
+    ]
+  },
+  {
+    "week": "Interview Question Bank",
+    "items": [
+      { "icon": "👥", "title": "HR-Interview Questions", "label": "External Link" },
+      { "icon": "❓", "title": "Other Common Questions", "label": "External Link" },
+      { "icon": "🧠", "title": "Situation Interview Question", "label": "External Link" },
+      { "icon": "📋", "title": "Over All Final Interview Questions", "label": "External Link" },
+      { "icon": "🔗", "title": "OverAll Drive Link", "label": "External Link" }
+    ]
+  },
+  {
+    "week": "Week-18: AI Agents",
+    "items": [
+      { "icon": "🤖", "title": "Introduction to AI Agents", "label": "VIDEO" },
+      { "icon": "🧠", "title": "AI Agents Types", "label": "VIDEO" },
+      { "icon": "❓", "title": "Why AI Agents?", "label": "VIDEO" },
+      { "icon": "🔍", "title": "LLM Models we Use", "label": "VIDEO" },
+      { "icon": "👨‍💻", "title": "Two Agent Code Walk Through", "label": "VIDEO" },
+      { "icon": "🧑‍🏫", "title": "Two Agent Code Detailed Explanation", "label": "VIDEO" },
+      { "icon": "🔧", "title": "Two Agents with AgentOps", "label": "VIDEO" },
+      { "icon": "🌟", "title": "Two Agent using Gemini", "label": "VIDEO" },
+      { "icon": "💻", "title": "Ollama Local Models", "label": "VIDEO" },
+      { "icon": "🛠️", "title": "How to use OllamaModel", "label": "VIDEO" },
+      { "icon": "🔄", "title": "Two Agents Retrieve User Proxy", "label": "VIDEO" },
+      { "icon": "🧬", "title": "Two Agent Retrieve Gemini Ollama", "label": "VIDEO" },
+      { "icon": "📄", "title": "Auto gen Documentation Overview", "label": "VIDEO" },
+      { "icon": "🤝", "title": "Multi Agents - Sequential Chat with Options", "label": "VIDEO" },
+      { "icon": "📌", "title": "Sequential Chat Agent Problem Statement", "label": "VIDEO" },
+      { "icon": "🧪", "title": "Sequential Chat handson with Call to Action", "label": "VIDEO" },
+      { "icon": "🔁", "title": "Multi Agent Nested Agents Problem Statement", "label": "VIDEO" },
+      { "icon": "🖥️", "title": "Nested Chat Hands-On", "label": "VIDEO" },
+      { "icon": "📝", "title": "MCQ- AI Agents", "label": "Online Exercise" }
+    ]
+  }
+
+];
+
+// Select the container where you want to insert the dynamic content
+const weeksContainer = document.getElementById('weeks-container');
+
+// If no data, show fallback
+if (!weeksContent.length) {
+  weeksContainer.innerHTML = `
+    <div class="text-center text-gray-500 py-6">
+      No content available at the moment 📭
+    </div>
+  `;
+}
+
+// Loop through each week and create the HTML structure
+weeksContent.forEach(week => {
+  const detailsElement = document.createElement('details');
+  detailsElement.classList.add('bg-white', 'shadow', 'rounded-md', 'p-4', 'group');
+
+  // Accordion behavior
+  detailsElement.addEventListener('toggle', () => {
+    if (detailsElement.open) {
+      document.querySelectorAll('#weeks-container details').forEach(d => {
+        if (d !== detailsElement) d.removeAttribute('open');
+      });
+    }
+  });
+
+  const summaryElement = document.createElement('summary');
+  summaryElement.classList.add('cursor-pointer', 'font-semibold', 'text-purple-700', 'text-lg');
+  summaryElement.textContent = week.week;
+
+  // Wrapper for scrollable list content
+  const contentWrapper = document.createElement('div');
+  contentWrapper.classList.add(
+    'transition-all',
+    'duration-300',
+    'ease-in-out',
+    'overflow-hidden',
+    'group-open:overflow-y-auto',
+    'max-h-0',
+    'group-open:max-h-[400px]', // scroll limit
+    'mt-3',
+    'pr-2' // avoid scrollbar cut-off
+  );
+
+  const listElement = document.createElement('ul');
+  listElement.classList.add('list-disc', 'list-inside', 'space-y-2', 'text-sm', 'text-gray-800');
+
+  week.items.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.classList.add(
+      'flex', 'items-center', 'gap-3', 'p-3',
+      'bg-white', 'rounded-lg', 'shadow-sm',
+      'hover:shadow-md', 'hover:bg-purple-50',
+      'hover:translate-x-1', 'hover:scale-[1.01]',
+      'transition-all', 'duration-200'
+    );
+
+    const iconSpan = document.createElement('span');
+    iconSpan.classList.add('text-purple-700', 'text-lg');
+    iconSpan.textContent = item.icon;
+
+    const titleSpan = document.createElement('span');
+    titleSpan.classList.add('text-gray-800', 'font-medium');
+    titleSpan.textContent = item.title;
+
+    listItem.appendChild(iconSpan);
+    listItem.appendChild(titleSpan);
+
+    if (item.label) {
+      const labelSpan = document.createElement('span');
+      labelSpan.classList.add(
+        'ml-auto',
+        'text-xs',
+        'bg-purple-100',
+        'text-purple-700',
+        'px-2',
+        'py-0.5',
+        'rounded-full'
+      );
+      labelSpan.textContent = item.label;
+      listItem.appendChild(labelSpan);
+    }
+
+    listElement.appendChild(listItem);
+  });
+
+  contentWrapper.appendChild(listElement);
+  detailsElement.appendChild(summaryElement);
+  detailsElement.appendChild(contentWrapper);
+  weeksContainer.appendChild(detailsElement);
+});
+
+  </script>
+
+</body>
+</html>
