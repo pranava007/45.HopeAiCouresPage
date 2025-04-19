@@ -287,9 +287,9 @@
 
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row sm:space-x-3 space-y-2 sm:space-y-0">
-          <a href="#"
+          <button onclick="openPopup()"
             class="w-full text-center bg-purple-700 text-white font-medium py-1.5 rounded-lg hover:bg-purple-800 transition duration-300 shadow">Enroll
-            Now</a>
+            Now</button>
           <a href=""
             class="w-full text-center border border-purple-700 text-purple-700 font-medium py-1.5 rounded-lg hover:bg-purple-200 transition duration-300 shadow">View
             Syllabus</a>
@@ -692,6 +692,106 @@
 </section>
 
 
+<!-- Enroll Now Popup -->
+<!-- <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4 backdrop-blur-sm"> -->
+  <!-- Background glow layer -->
+  <!-- <div class="absolute inset-0 bg-purple-500 blur-3xl opacity-20 rounded-full animate-pulse"></div> -->
+
+  <!-- Popup Box -->
+  <!-- <div class="bg-white rounded-xl p-4 w-full max-w-3xl relative shadow-2xl z-10">
+    <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center text-purple-800 mb-6">
+      Register Now!
+    </h1> -->
+
+    <!-- Close Button -->
+    <!-- <button onclick="closePopup()" class="absolute top-2 right-4 text-xl text-gray-600 hover:text-black">&times;</button> -->
+
+    <!-- Google Form iframe -->
+    <!-- <iframe
+      id="googleForm"
+      src="https://docs.google.com/forms/d/e/1FAIpQLSePoqgbiQxvf_2CapcnHIs0VVHvytNNKO33VIV0xgzV9psb6Q/viewform?embedded=true"
+      width="100%"
+      height="500"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      class="w-full border-none"
+      onload="checkThankYouPage()">
+      Loading…
+    </iframe> -->
+
+    <!-- Thank You Message -->
+    <!-- <div id="thankYouMessage" class="hidden text-green-600 font-semibold text-center mt-4">
+      ✅ Thank you! Your form has been submitted successfully.  
+      Our team will contact you shortly.
+    </div>
+  </div>
+</div> -->
+
+<!-- Enroll Now Popup -->
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+  <!-- Background glow layer -->
+  <div class="absolute inset-0 bg-purple-500 blur-3xl opacity-20 rounded-full animate-pulse"></div>
+
+  <!-- Popup Box -->
+  <div class="bg-white/90 backdrop-blur-md rounded-2xl p-8 w-full max-w-2xl relative shadow-2xl z-10 space-y-6 transition duration-300">
+    
+    <!-- Title -->
+    <h1 class="text-4xl sm:text-4xl md:text-5xl font-extrabold text-center text-purple-800 drop-shadow">
+      Register Now!
+    </h1>
+
+    <!-- Close Button -->
+    <button onclick="closePopup()" class="absolute top-3 right-5 text-2xl text-gray-500 hover:text-black transition duration-200">
+      &times;
+    </button>
+
+    <!-- Options Container -->
+    <div class="space-y-6">
+      
+      <!-- Option 1: 1:1 Call Booking -->
+      <div class="p-6 border border-purple-200 rounded-2xl shadow-lg bg-gradient-to-br from-purple-50 to-white hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ease-in-out group cursor-pointer">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="text-3xl text-purple-700 group-hover:scale-110 transition">📞</div>
+          <h2 class="text-2xl font-semibold text-purple-800 group-hover:text-purple-900 transition">1:1 Call Booking</h2>
+        </div>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Schedule a personal call with our team to discuss your goals and queries in detail.
+        </p>
+        <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-xl shadow-md hover:shadow-xl transition">
+          Next
+        </button>
+      </div>
+
+      <!-- Option 2: Webinar Attend -->
+      <div class="p-6 border border-purple-200 rounded-2xl shadow-lg bg-gradient-to-br from-purple-50 to-white hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ease-in-out group cursor-pointer">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="text-3xl text-purple-700 group-hover:scale-110 transition">🧑‍💻</div>
+          <h2 class="text-2xl font-semibold text-purple-800 group-hover:text-purple-900 transition">Webinar Attend</h2>
+        </div>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Join our upcoming webinar to explore the program, ask questions, and interact live with experts.
+        </p>
+        <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-xl shadow-md hover:shadow-xl transition">
+          Next
+        </button>
+      </div>
+    </div>
+
+    <!-- Thank You Message (Optional) -->
+    <div id="thankYouMessage" class="hidden text-green-600 font-semibold text-center mt-4">
+      ✅ Thank you! Your choice has been recorded.  
+      Our team will contact you shortly.
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
 
   
   
@@ -702,6 +802,35 @@
   <!-- search -->
 
   <script>
+
+const popup = document.getElementById("popup");
+  const thankYouMessage = document.getElementById("thankYouMessage");
+  const googleForm = document.getElementById("googleForm");
+
+  function openPopup() {
+    popup.classList.remove("hidden");
+    thankYouMessage.classList.add("hidden");
+    googleForm.src = googleForm.src; // Reload the form
+  }
+
+  function closePopup() {
+    popup.classList.add("hidden");
+  }
+
+  function checkThankYouPage() {
+    const observer = new MutationObserver(() => {
+      try {
+        if (googleForm.contentWindow.location.href.includes("formResponse")) {
+          thankYouMessage.classList.remove("hidden");
+          setTimeout(closePopup, 2000); // Auto-close after 2 seconds
+        }
+      } catch (e) {
+        // Cross-origin protection — do nothing
+      }
+    });
+
+    observer.observe(googleForm, { attributes: true, childList: true, subtree: true });
+  }
 
     
     
@@ -1056,6 +1185,9 @@
     container1.appendChild(card);
   }
 );
+
+
+
 
 
 
