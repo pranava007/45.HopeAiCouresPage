@@ -55,54 +55,81 @@
 <body>
 
 
-    <section class="bg-purple-100 shadow-inner w-full mt-2">
-        <div class="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- Left: Accordion Content -->
-          <div class="lg:col-span-2 space-y-6 text-left">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-700 leading-tight">
-              Full Stack Artificial Intelligence & Data Science Course - Syllabus
-            </h1>
+<section class="bg-purple-100 shadow-inner w-full mt-2 overflow-hidden">
+  <div class="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            <!-- <div id="weeks-container" class="space-y-4 max-w-3xl mx-auto">
+    <!-- Left Content -->
+    <div class="lg:col-span-2 space-y-6 text-left px-2 sm:px-4">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-700 leading-tight">
+        Full Stack Artificial Intelligence & Data Science Course - Syllabus
+      </h1>
 
-            </div> -->
+      <div id="weeks-container" class="space-y-4 p-4 sm:p-6 lg:p-10 bg-white bg-opacity-10 max-w-3xl mx-auto rounded-lg shadow-lg overflow-y-auto">
+        <!-- Accordion content will go here -->
+      </div>
+    </div>
 
-            <div id="weeks-container" class="space-y-4 p-10 bg-opacity-10 max-w-3xl mx-auto rounded-lg shadow-lg overflow-y-auto">
-                
-            </div>
+    <!-- Right Pricing Box -->
+    <div class="bg-white shadow-xl rounded-2xl p-6 sm:p-8 space-y-8 w-full max-w-xl mx-auto text-left">
+      <!-- Main Heading -->
+      <h2 class="text-3xl font-extrabold text-purple-700">Register Now!</h2>
+      <p class="text-lg text-gray-600 flex items-center gap-2">
+        📞 Only via <strong class="text-purple-700">1:1 Call Booking</strong>
+      </p>
 
+      <!-- Improved Course Price Info -->
+      <div class="bg-gradient-to-r from-red-100 to-pink-100 border border-red-300 p-5 sm:p-6 rounded-2xl shadow-lg transition hover:shadow-xl duration-300">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-semibold text-gray-700 uppercase tracking-wider">Actual Course Price</p>
+            <p class="text-3xl font-extrabold text-red-700 line-through mt-1">Rs. 1,00,000</p>
+          </div>
+          <div class="text-red-500 text-4xl animate-bounce" aria-label="Money Icon">💸</div>
+        </div>
+      </div>
 
+      <!-- Exclusive Offer -->
+      <div class="mt-5 pl-2">
+        <p class="text-lg font-bold text-purple-800 flex items-center gap-2">
+          <span class="text-3xl">🎉</span>
+          <span>Exclusive Offer</span>
+        </p>
+        <p class="text-sm text-gray-600 mt-1 ml-1 italic">(Who are all booking 1:1 call)</p>
+      </div>
+
+      <!-- Offer Cards -->
+      <div class="grid gap-6 md:grid-cols-1">
+        <!-- Card 1 -->
+        <div class="bg-purple-50 border-2 border-purple-300 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+          <p class="text-lg font-semibold text-gray-800 mb-1">All Modules</p>
+          <p class="text-sm text-gray-600 mb-2">1 Year Mentorship</p>
+          <p class="text-2xl font-bold text-purple-700">Rs. 30,000</p>
+          <button class="mt-4 w-full bg-purple-700 text-white py-2 rounded-md font-semibold flex justify-center items-center gap-2 hover:animate-pulse hover:shadow-glow transition duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+            Book Now
+          </button>
         </div>
 
-            <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-6 text-left">
-                <h2 class="text-2xl font-bold text-purple-700">Register Now!</h2>
-               
-                <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col gap-6 text-left">
-                    <!-- Title with icon on the left -->
-                    <p class="text-gray-700 font-medium flex items-center gap-2">
-                      <!-- Phone Icon (1:1 Call Booking) -->
-                      📞
-                      Get 1:1 Call Booking
-                    </p>
-                    
-                    <!-- Card with a smooth border and shadow -->
-                    <div class="bg-purple-100 p-4 rounded-md border-2 border-purple-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-500 hover:border-purple-400 transition duration-300 ease-in-out">
-                      <p class="text-lg font-semibold text-gray-900">All Modules</p>
-                      <p class="text-2xl font-bold text-purple-700">Rs. 30,000</p>
-                      <!-- Button with Icon -->
-                      <button class="w-full mt-4 bg-purple-700 text-white py-2 rounded-md font-semibold flex justify-center items-center gap-2 hover:bg-purple-800 focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 transition duration-300">
-                        <!-- Right arrow icon for "Book Now" -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
-                        </svg>
-                        Book Now
-                      </button>
-                    </div>
-                  </div>
-           </div>
-            </div>
-            
-          </section>
+        <!-- Card 2 -->
+        <div class="bg-purple-50 border-2 border-purple-300 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+          <p class="text-lg font-semibold text-gray-800 mb-1">All Modules</p>
+          <p class="text-sm text-gray-600 mb-2">3 Year Mentorship</p>
+          <p class="text-2xl font-bold text-purple-700">Rs. 40,000</p>
+          <button class="mt-4 w-full bg-purple-700 text-white py-2 rounded-md font-semibold flex justify-center items-center gap-2 hover:animate-pulse hover:shadow-glow transition duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 
 

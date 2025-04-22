@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
   <!-- 🔷 Top Contact Bar - Horizontal Layout -->
   <div class="bg-purple-700 text-white py-1 px-1 md:pr-20 ">
     <div class="max-w-7xl mx-auto flex justify-end">
@@ -723,63 +724,72 @@
 </div> -->
 
 <!-- Enroll Now Popup -->
-<div id="popup" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-  <!-- Background glow layer -->
-  <div class="absolute inset-0 bg-purple-500 blur-3xl opacity-20 rounded-full animate-pulse"></div>
+<div id="popup" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4 backdrop-blur-sm font-sans">
+  
+  <!-- Glowing Background Effect -->
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-500 via-fuchsia-400 to-purple-600 blur-3xl opacity-20 animate-pulse"></div>
+  
+  <!-- Main Card -->
+  <div class="relative z-10 bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl border border-purple-100 p-8 max-w-3xl w-full transition-all duration-500 space-y-6">
 
-  <!-- Popup Box -->
-  <div class="bg-white/90 backdrop-blur-md rounded-2xl p-8 w-full max-w-2xl relative shadow-2xl z-10 space-y-6 transition duration-300">
-    
     <!-- Title -->
-    <h1 class="text-4xl sm:text-4xl md:text-5xl font-extrabold text-center text-purple-800 drop-shadow">
-      Register Now!
-    </h1>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center text-purple-700 tracking-tight drop-shadow-lg">
+      🚀 Book Your 1:1 Call
+    </h2>
 
     <!-- Close Button -->
-    <button onclick="closePopup()" class="absolute top-3 right-5 text-2xl text-gray-500 hover:text-black transition duration-200">
+    <button onclick="closePopup()" class="absolute top-3 right-5 text-3xl text-gray-400 hover:text-black transition duration-200">
       &times;
     </button>
 
-    <!-- Options Container -->
-    <div class="space-y-6">
-      
-      <!-- Option 1: 1:1 Call Booking -->
-      <div class="p-6 border border-purple-200 rounded-2xl shadow-lg bg-gradient-to-br from-purple-50 to-white hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ease-in-out group cursor-pointer">
-        <div class="flex items-center gap-3 mb-2">
-          <div class="text-3xl text-purple-700 group-hover:scale-110 transition">📞</div>
-          <h2 class="text-2xl font-semibold text-purple-800 group-hover:text-purple-900 transition">1:1 Call Booking</h2>
-        </div>
-        <p class="text-gray-600 mb-6 leading-relaxed">
-          Schedule a personal call with our team to discuss your goals and queries in detail.
-        </p>
-        <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-xl shadow-md hover:shadow-xl transition">
-          Next
-        </button>
+    <!-- Content -->
+    <div class="text-gray-700 space-y-5 text-[17px] leading-relaxed">
+
+      <div class="bg-purple-50/60 rounded-xl p-4 border-l-4 border-purple-500 shadow-sm">
+        <p><strong class="text-purple-800">📞 Why a 1:1 Call?</strong><br>
+        <!-- Personalized career roadmap based on your goals and background. -->
+        This call is designed to help you gain complete clarity on your career path, course fit, and how we can support your journey.</p>
       </div>
 
-      <!-- Option 2: Webinar Attend -->
-      <div class="p-6 border border-purple-200 rounded-2xl shadow-lg bg-gradient-to-br from-purple-50 to-white hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ease-in-out group cursor-pointer">
-        <div class="flex items-center gap-3 mb-2">
-          <div class="text-3xl text-purple-700 group-hover:scale-110 transition">🧑‍💻</div>
-          <h2 class="text-2xl font-semibold text-purple-800 group-hover:text-purple-900 transition">Webinar Attend</h2>
-        </div>
-        <p class="text-gray-600 mb-6 leading-relaxed">
-          Join our upcoming webinar to explore the program, ask questions, and interact live with experts.
-        </p>
-        <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-xl shadow-md hover:shadow-xl transition">
-          Next
-        </button>
+      <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100">
+        <p><strong class="text-purple-700">🎯 On This Page, You Can:</strong></p>
+        <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+          <li>📘 Download the full course syllabus</li>
+          <li>🗺️ Explore your customized learning roadmap</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-r from-white to-purple-50 p-4 rounded-xl border border-purple-100 shadow-sm">
+        <p><strong class="text-purple-800">🔍 What Happens in the Call?</strong></p>
+        <ul class="list-decimal list-inside ml-4 mt-2 space-y-2">
+          <li><strong>Profile Review:</strong> Your goals, skills & experience.</li>
+          <li><strong>Career Guidance:</strong> Tailored advice from mentors.</li>
+          <li><strong>Enrollment Support:</strong> Get clarity on next steps.</li>
+        </ul>
+      </div>
+
+      <div class="text-center mt-4">
+        <p class="text-lg font-semibold text-purple-800">✨ Let’s start shaping your future—one step at a time.</p>
       </div>
     </div>
 
-    <!-- Thank You Message (Optional) -->
+    <!-- CTA -->
+    <div class="flex justify-center">
+      <button class="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 font-semibold tracking-wide">
+        🚀 Next Step
+      </button>
+    </div>
+
+    <!-- Thank You -->
     <div id="thankYouMessage" class="hidden text-green-600 font-semibold text-center mt-4">
-      ✅ Thank you! Your choice has been recorded.  
-      Our team will contact you shortly.
+      ✅ Thank you! We’ll reach out to you shortly.
     </div>
-    
+
   </div>
 </div>
+
+
+
 
 
 
